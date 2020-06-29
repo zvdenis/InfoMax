@@ -2,5 +2,5 @@
 
 # Project exclude paths
 /out/
-/filesToParse/
 .idea/vcs.xml
+/filesToParse/address.xml
