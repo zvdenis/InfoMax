@@ -1,5 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
-!/filesToParse/address.xml
 
 # Project exclude paths
 /out/
+/filesToParse/
+.idea/vcs.xml
