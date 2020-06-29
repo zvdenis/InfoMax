@@ -5,4 +5,4 @@
 Для добавления файлов в список для анализа их нужно разместить в папке filesToParse, после чего для каждого файла будет выполнено задание
 
 ## Резултаты
-![res](https://github.com/zvdenis/InfoMax/blob/master/image.png)
+![res](https://github.com/zvdenis/InfoMax/blob/master/res.png)
