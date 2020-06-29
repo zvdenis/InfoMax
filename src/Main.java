@@ -13,12 +13,27 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            System.out.println("Openning File " + fileToParse);
-            File fxmlFile = new File(folderToParse + "/" + fileToParse);
-            System.out.println("File opened! Parsing..");
+
+            File folder = new File(folderToParse + "/");
+            File[] listOfFiles = folder.listFiles();
+
+            if(listOfFiles.length == 0){
+                System.out.println("No files in directory");
+                return;
+            }
+            System.out.println("Files in directory:");
+            for (File file : listOfFiles) {
+                if (file.isFile()) {
+                    System.out.println(file.getName());
+                }
+            }
+
             Parser parser = new Parser();
-            parser.parse(fxmlFile);
-            printInfo(parser.getDuplicates(), parser.getFloorsCount(), parser.getCount());
+            for(int i = 0; i < listOfFiles.length; i++) {
+                System.out.println("\n Parsing File " + listOfFiles[i].getName());
+                parser.parse(listOfFiles[i]);
+                printInfo(parser.getDuplicates(), parser.getFloorsCount(), parser.getCount());
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -35,6 +50,8 @@ public class Main {
         for (int i = 1; i < 6; i++) {
             System.out.println(i + " - floors building count: " + floors.get(i));
         }
+
+        System.out.println();
     }
 }
 

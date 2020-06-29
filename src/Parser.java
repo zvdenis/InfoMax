@@ -6,10 +6,12 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.xml.sax.SAXParseException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -55,8 +57,13 @@ public class Parser {
                     floorsCount.set(floor, floorsCount.get(floor) + 1);
                 }
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+
+        }
+        catch (SAXParseException e){
+            System.out.println("Can't parse file");
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
         }
     }
 
